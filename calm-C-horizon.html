@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From the Heart of Long Island — Horizonte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/*
+  ╔═══════════════════════════════════════════════════════╗
+  ║  CALM C — HORIZON                                     ║
+  ║                                                       ║
+  ║  Concept: Open vista. The hero is almost empty —     ║
+  ║  the name, a horizon line, and sky. Then the page    ║
+  ║  opens section by section, like daybreak.            ║
+  ║  Each section is one complete breath.                ║
+  ║                                                       ║
+  ║  Science applied:                                     ║
+  ║  • Horizon line = primal safety cue. Open vista      ║
+  ║    panorama signals "I can see all threats" →        ║
+  ║    amygdala deactivates (Appleton 1975, Prospect-    ║
+  ║    Refuge theory). Used in healing architecture.     ║
+  ║  • Near-empty above the fold → minimal cognitive     ║
+  ║    load at first contact. Brain says "safe here."   ║
+  ║  • Dark-to-light scroll arc mirrors dawn/sunrise     ║
+  ║    → circadian safety cue (melatonin research)       ║
+  ║  • Slow parallax on horizon line: depth without      ║
+  ║    sudden motion (below 6Hz flicker threshold)       ║
+  ║  • Quote as the FIRST major content after hero:      ║
+  ║    emotional anchoring before information load       ║
+  ║  • Thin horizontal rules as "rest ledges" —          ║
+  ║    visual resting places every few paragraphs,       ║
+  ║    reduce saccadic eye strain                        ║
+  ║  • High line-height (1.85) = 11% below anxious      ║
+  ║    fast-reading pace. Forces contemplation.          ║
+  ╚═══════════════════════════════════════════════════════╝
+*/
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Dawn palette: from night through blue hour into day */
+  --night:      #080E18;   /* opening sky color */
+  --deep-blue:  #0A1E30;
+  --horizon:    #0D2840;
+  --blue-hour:  #143550;
+  --slate:      #1E4560;
+  --dusk-teal:  #1A6A6A;
+  --teal:       #28928A;
+  --mint-light: #9DD6CF;
+  --mint-faint: #C4EAE5;
+  --sky:        #B8D8E8;
+  --cream:      #F5F2EC;
+  --cream-mid:  #EDE8DF;
+  --cream-line: #D8D2C8;
+  --sage:       #6B8C82;
+  --text-dark:  #1A2B2E;
+  --text-mid:   #4A6068;
+  --near-black: #060E18;
+  --navy:       #0A2B42;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--night);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+.img-ph {
+  background: rgba(255,255,255,0.05);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Inter', sans-serif; font-size: 11px; color: rgba(255,255,255,0.25);
+  letter-spacing: 0.05em; text-align: center; padding: 12px;
+}
+
+/*
+  ═══════════════════════════════════════════════════════
+  HERO — The open vista. Nothing competes.
+  Science: Prospect-Refuge theory. The user can "see"
+  the whole space. No visual threat. No crowding.
+  The horizon line is structural — not decorative.
+  ═══════════════════════════════════════════════════════
+*/
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--night);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Star field — very subtle, represents Long Island's connection to something larger */
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0;
+  animation: starFade var(--sd, 3s) ease var(--ss, 0s) infinite alternate;
+}
+
+@keyframes starFade {
+  0% { opacity: 0; }
+  100% { opacity: var(--so, 0.5); }
+}
+
+/* Horizon glow — the faint light at the edge */
+.horizon-glow {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(to top,
+    rgba(26,106,106,0.18) 0%,
+    rgba(13,40,64,0.12) 30%,
+    transparent 80%
+  );
+  pointer-events: none;
+}
+
+/* The horizon line itself */
+.horizon-line {
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(157,214,207,0.2) 20%,
+    rgba(157,214,207,0.5) 50%,
+    rgba(157,214,207,0.2) 80%,
+    transparent 100%
+  );
+  bottom: 30%;
+  animation: horizonBreath 6s ease-in-out infinite; /* 6s ≈ relaxed breathing */
+}
+
+@keyframes horizonBreath {
+  0%,100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 32px;
+}
+
+.hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(157,214,207,0.5);
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: slowFade 1.4s ease 0.5s forwards;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.1;
+  opacity: 0;
+  animation: slowFade 1.4s ease 1s forwards;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--mint-light);
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.04em;
+  margin-top: 24px;
+  line-height: 1.85; /* slow reading: contemplative */
+  max-width: 520px;
+  margin-left: auto; margin-right: auto;
+  opacity: 0;
+  animation: slowFade 1.4s ease 1.6s forwards;
+}
+
+/* Scroll indicator — breathing like the horizon */
+.hero-scroll {
+  position: absolute;
+  bottom: 40px; left: 50%;
+  transform: translateX(-50%);
+  display: flex; flex-direction: column;
+  align-items: center; gap: 12px;
+  opacity: 0;
+  animation: slowFade 1.2s ease 2.8s forwards;
+}
+
+.scroll-line {
+  width: 1px; height: 50px;
+  background: linear-gradient(to bottom, rgba(157,214,207,0.5), transparent);
+  animation: scrollBreathe 3s ease-in-out 3s infinite;
+}
+
+@keyframes scrollBreathe {
+  0%,100% { height: 50px; opacity: 0.5; }
+  50% { height: 36px; opacity: 0.9; }
+}
+
+.scroll-label {
+  font-family: 'Inter', sans-serif; font-size: 9px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(157,214,207,0.3);
+}
+
+@keyframes slowFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/*
+  ═══════════════════════════════════════════════════════
+  THE QUOTE — Appears first after the hero.
+  Science: Emotional anchoring (LeDoux). The amygdala
+  processes emotional content before rational content.
+  Lead with the human voice, not data. The reader
+  bonds emotionally first; information comes after.
+  ═══════════════════════════════════════════════════════
+*/
+.opening-quote {
+  background: var(--deep-blue);
+  padding: 110px 40px;
+  border-top: 1px solid rgba(157,214,207,0.08);
+}
+
+.opening-quote-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.opening-quote-inner.visible {
+  opacity: 1; transform: translateY(0);
+}
+
+.oq-mark {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5rem;
+  color: rgba(157,214,207,0.15);
+  line-height: 0.8;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.oq-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  color: rgba(255,255,255,0.88);
+  line-height: 1.85; /* contemplative pace */
+}
+
+.oq-rule { width: 32px; height: 1px; background: var(--teal); margin: 36px 0 16px; }
+
+.oq-attr {
+  font-family: 'Inter', sans-serif; font-size: 11px;
+  font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--mint-light); opacity: 0.7;
+}
+
+/*
+  ═══════════════════════════════════════════════════════
+  TRANSITION — DARK TO LIGHT
+  Science: Dawn-light scroll arc. As the user moves
+  through the page, background transitions from night
+  blue to warm cream, mirroring a sunrise — circadian
+  safety signals, hope arc.
+  ═══════════════════════════════════════════════════════
+*/
+.dawn-transition {
+  height: 300px;
+  background: linear-gradient(to bottom,
+    var(--deep-blue) 0%,
+    #112840 20%,
+    #193A4A 40%,
+    #1C4A4A 60%,
+    #2A6860 75%,
+    #3A8A78 90%,
+    #5FA990 100%
+  );
+}
+
+/*
+  ═══════════════════════════════════════════════════════
+  LIGHT WORLD — warm, open
+  From here, background is cream. The reader has
+  "arrived" in daylight.
+  ═══════════════════════════════════════════════════════
+*/
+.light-world {
+  background: var(--cream);
+  color: var(--text-dark);
+}
+
+.section-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 0.24em; text-transform: uppercase;
+  color: var(--sage);
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 52px;
+}
+
+.section-label::before {
+  content: ''; width: 28px; height: 1px;
+  background: rgba(107,140,130,0.5); display: inline-block;
+}
+
+/*
+  ═══════════════════════════════════════════════════════
+  VALUES / MIND MAP — Clean radial in light world
+  Science: Radial organization mirrors hippocampal
+  memory mapping. Familiar structure = safe structure.
+  Cool pale nodes on cream = high readability with
+  low cognitive friction.
+  ═══════════════════════════════════════════════════════
+*/
+.values-section {
+  padding: 100px 0;
+}
+
+.values-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.25;
+  max-width: 620px;
+  margin-bottom: 80px;
+}
+
+.values-headline em {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.web-canvas {
+  position: relative;
+  height: 560px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.web-canvas svg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.web-hub {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 124px; height: 124px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 10;
+  box-shadow: 0 0 0 0 rgba(40,146,138,0.25);
+  animation: hubBreath 4s ease-in-out infinite; /* 4s ≈ 15 breaths/min = calm */
+}
+
+@keyframes hubBreath {
+  0%,100% { box-shadow: 0 0 0 0 rgba(40,146,138,0.25); }
+  50% { box-shadow: 0 0 0 20px rgba(40,146,138,0); }
+}
+
+.web-hub-text {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 0.72rem;
+  color: white;
+  line-height: 1.45;
+  padding: 10px;
+}
+
+.web-path {
+  fill: none;
+  stroke: var(--cream-line);
+  stroke-width: 1;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawLine 0.9s ease forwards;
+}
+.web-path:nth-child(1) { animation-delay: 0.2s; }
+.web-path:nth-child(2) { animation-delay: 0.38s; }
+.web-path:nth-child(3) { animation-delay: 0.56s; }
+.web-path:nth-child(4) { animation-delay: 0.74s; }
+.web-path:nth-child(5) { animation-delay: 0.92s; }
+.web-path:nth-child(6) { animation-delay: 1.1s; }
+.web-path:nth-child(7) { animation-delay: 1.28s; }
+
+@keyframes drawLine { to { stroke-dashoffset: 0; } }
+
+.web-dot { fill: var(--teal); r: 3.5; opacity: 0.5; }
+
+.web-node {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+  animation: nodeIn 0.7s ease forwards;
+}
+
+.web-node:nth-child(2) { animation-delay: 1.3s; }
+.web-node:nth-child(3) { animation-delay: 1.46s; }
+.web-node:nth-child(4) { animation-delay: 1.62s; }
+.web-node:nth-child(5) { animation-delay: 1.78s; }
+.web-node:nth-child(6) { animation-delay: 1.94s; }
+.web-node:nth-child(7) { animation-delay: 2.1s; }
+.web-node:nth-child(8) { animation-delay: 2.26s; }
+
+@keyframes nodeIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.float-a { animation: nodeIn 0.7s ease forwards, floatA 5.5s ease-in-out 2.8s infinite; }
+.float-b { animation: nodeIn 0.7s ease forwards, floatB 6.5s ease-in-out 3s infinite; }
+.float-c { animation: nodeIn 0.7s ease forwards, floatA 5s ease-in-out 2.5s infinite; }
+.float-d { animation: nodeIn 0.7s ease forwards, floatB 6s ease-in-out 3.2s infinite; }
+.float-e { animation: nodeIn 0.7s ease forwards, floatA 5.8s ease-in-out 2.7s infinite; }
+.float-f { animation: nodeIn 0.7s ease forwards, floatB 5.2s ease-in-out 2.9s infinite; }
+.float-g { animation: nodeIn 0.7s ease forwards, floatA 6.2s ease-in-out 2.6s infinite; }
+
+@keyframes floatA {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes floatB {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+.node-pos-0 { top: 2%;  left: 37%; }
+.node-pos-1 { top: 7%;  left: 2%; }
+.node-pos-2 { top: 7%;  right: 2%; }
+.node-pos-3 { top: 38%; left: -2%; }
+.node-pos-4 { top: 38%; right: -2%; }
+.node-pos-5 { bottom: 5%; left: 7%; }
+.node-pos-6 { bottom: 5%; right: 5%; }
+
+/* Minimal pill nodes — no borders, just floating labels */
+.value-pill {
+  background: white;
+  border-radius: 100px;
+  padding: 10px 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-dark);
+  white-space: nowrap;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 0 0 1px var(--cream-line);
+}
+
+.value-pill-teal {
+  background: var(--teal);
+  color: white;
+  box-shadow: 0 2px 12px rgba(40,146,138,0.25);
+}
+
+.value-pill-slate {
+  background: #2A4A5A;
+  color: rgba(255,255,255,0.85);
+  box-shadow: 0 2px 12px rgba(42,74,90,0.2);
+}
+
+/*
+  ═══════════════════════════════════════════════════════
+  THREE COMMITMENTS
+  Science: Three-item list is the brain's natural
+  grouping limit (Miller's Law). Not two (binary
+  = conflict), not four (too much). Three = complete,
+  harmonious, stable (trilogy, trinity, Goldilocks).
+  ═══════════════════════════════════════════════════════
+*/
+.commitments-section {
+  background: var(--cream-mid);
+  padding: 100px 0;
+  border-top: 1px solid var(--cream-line);
+  border-bottom: 1px solid var(--cream-line);
+}
+
+.commitment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.commitment-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 40px;
+  align-items: start;
+  padding: 48px 0;
+  border-bottom: 1px solid var(--cream-line);
+  opacity: 0;
+  transform: translateX(-16px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.commitment-item.visible {
+  opacity: 1; transform: translateX(0);
+}
+
+.commitment-item:last-child { border-bottom: none; }
+.commitment-item:nth-child(2) { transition-delay: 0.15s; }
+.commitment-item:nth-child(3) { transition-delay: 0.3s; }
+
+.commitment-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: var(--cream-line);
+  font-weight: 400;
+  line-height: 1;
+  padding-top: 4px;
+}
+
+.commitment-content {}
+
+.commitment-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.commitment-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--text-mid);
+  line-height: 1.85;
+  max-width: 680px;
+}
+
+.commitment-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--teal);
+  text-decoration: none;
+  margin-top: 16px;
+  border-bottom: 1px solid rgba(40,146,138,0.3);
+  padding-bottom: 2px;
+  transition: border-color 0.3s, color 0.3s;
+}
+.commitment-link:hover { border-color: var(--teal); }
+
+/*
+  ═══════════════════════════════════════════════════════
+  COMMUNITY PHOTOS — calm grid with generous gaps
+  ═══════════════════════════════════════════════════════
+*/
+.photos-section {
+  background: var(--cream);
+  padding: 100px 0;
+}
+
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.photo-tile {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.75s ease, transform 0.75s ease, box-shadow 0.3s;
+}
+
+.photo-tile.visible { opacity: 1; transform: translateY(0); }
+.photo-tile:hover { box-shadow: 0 8px 28px rgba(40,146,138,0.12); }
+.photo-tile:nth-child(2) { transition-delay: 0.15s; }
+.photo-tile:nth-child(3) { transition-delay: 0.3s; }
+.photo-tile a { display: block; text-decoration: none; color: inherit; }
+.photo-tile-img { width: 100%; height: 230px; object-fit: cover; display: block; }
+.photo-tile-cap {
+  padding: 12px 14px;
+  background: white;
+  border-top: 2px solid var(--mint-faint);
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 500;
+  color: var(--text-mid); letter-spacing: 0.05em;
+}
+
+/*
+  ═══════════════════════════════════════════════════════
+  STREET SCROLL PHOTO
+  ═══════════════════════════════════════════════════════
+*/
+.street-section {
+  height: 85vh;
+  background: var(--dusk-teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.street-wrap {
+  will-change: transform;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.25);
+}
+
+.street-wrap img,
+.street-wrap .img-ph {
+  width: 100vw; height: 85vh;
+  object-fit: cover; display: block;
+}
+
+/*
+  ═══════════════════════════════════════════════════════
+  GRADIENT BRIDGE
+  ═══════════════════════════════════════════════════════
+*/
+.bridge {
+  height: 280px;
+  background: linear-gradient(to bottom,
+    var(--dusk-teal) 0%,
+    #1A5A5A 15%,
+    #164D55 35%,
+    #123A4A 55%,
+    #0E2E40 75%,
+    var(--navy) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bridge-text {
+  font-family: 'Inter', sans-serif; font-size: 10px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(255,255,255,0.1);
+}
+
+/*
+  ═══════════════════════════════════════════════════════
+  TAGLINE
+  ═══════════════════════════════════════════════════════
+*/
+.tagline-section {
+  background: var(--navy);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.tagline-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle, rgba(157,214,207,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.tagline-glow {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 200px;
+  background: radial-gradient(ellipse at 50% 100%, rgba(40,146,138,0.14) 0%, transparent 70%);
+}
+
+.tagline-inner {
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 48px; position: relative; z-index: 1;
+}
+
+.tagline-full {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(1.1rem, 2.5vw, 2rem);
+  white-space: nowrap; color: rgba(255,255,255,0.8);
+  line-height: 1.2; overflow: hidden; text-overflow: ellipsis;
+  margin-bottom: 80px;
+}
+
+.tagline-full em { font-style: italic; color: var(--mint-light); }
+
+.ice-cascade { text-align: center; }
+
+.ice-line {
+  display: block;
+  font-family: 'DM Serif Display', serif;
+  color: white; opacity: 0; transform: translateY(18px);
+}
+
+.ice-line-1 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: rgba(255,255,255,0.5); animation: riseIn 0.8s ease 0.4s forwards; }
+.ice-line-2 { font-size: clamp(2.2rem, 4vw, 3.4rem); color: rgba(255,255,255,0.7); animation: riseIn 0.8s ease 0.85s forwards; }
+.ice-line-3 { font-size: clamp(2.8rem, 5.5vw, 4.6rem); font-style: italic; color: var(--mint-light); animation: riseIn 0.8s ease 1.3s forwards; }
+
+@keyframes riseIn { to { opacity: 1; transform: translateY(0); } }
+
+/*
+  FOOTER
+*/
+footer {
+  background: var(--near-black);
+  padding: 56px 48px 40px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.footer-inner { max-width: 1100px; margin: 0 auto; }
+
+.footer-motto {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 2rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 48px;
+}
+
+.footer-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-nav { display: flex; gap: 32px; }
+.footer-nav a {
+  font-family: 'DM Sans', sans-serif; font-size: 13px;
+  color: rgba(255,255,255,0.4); text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-nav a:hover { color: var(--mint-light); }
+
+.footer-ig { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.footer-ig-icon {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.3s;
+}
+.footer-ig:hover .footer-ig-icon { border-color: rgba(157,214,207,0.4); }
+.footer-ig-icon svg {
+  width: 18px; height: 18px; stroke: rgba(255,255,255,0.35);
+  fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+}
+.footer-ig-handle { font-family: 'DM Sans', sans-serif; font-size: 12px; color: rgba(255,255,255,0.3); }
+
+/* MOBILE */
+@media (max-width: 760px) {
+  .hero-title { font-size: clamp(2.4rem, 8vw, 3.5rem); }
+  .commitment-item { grid-template-columns: 1fr; gap: 8px; }
+  .commitment-num { font-size: 2rem; }
+  .photos-grid { grid-template-columns: 1fr; }
+  .web-canvas { height: auto; display: flex; flex-direction: column; gap: 12px; align-items: center; padding: 0 16px; }
+  .web-canvas svg { display: none; }
+  .web-hub { position: static; transform: none; margin: 0 auto 12px; }
+  .web-node { position: static; opacity: 1; animation: none; }
+  .tagline-full { white-space: normal; font-size: clamp(1.1rem, 3.5vw, 1.5rem); }
+  .footer-bar { flex-direction: column; align-items: flex-start; }
+}
+
+.option-label {
+  position: fixed; top: 16px; right: 16px;
+  background: rgba(40,146,138,0.9); color: white;
+  font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 6px 14px; border-radius: 4px; z-index: 9999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+</style>
+</head>
+<body>
+
+<div class="option-label">Calm C — Horizonte</div>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- Stars — slow breathing opacity -->
+  <div class="stars" id="stars"></div>
+  <div class="horizon-glow"></div>
+  <div class="horizon-line"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">Hempstead, Long Island · Movimiento de Ayuda Mutua</div>
+    <h1 class="hero-title">
+      From the Heart<br>of <em>Long Island</em>
+    </h1>
+    <p class="hero-subtitle">
+      Un movimiento de ayuda mutua arraigado en Hempstead. Construido sobre la solidaridad. Aquí para quedarse.
+    </p>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <div class="scroll-label">Desplazar</div>
+  </div>
+</section>
+
+<!-- THE QUOTE — emotional anchor before information -->
+<section class="opening-quote">
+  <div class="opening-quote-inner" id="oq">
+    <span class="oq-mark">"</span>
+    <blockquote class="oq-text">
+      Somos parte de una larga historia de victorias impulsadas por el pueblo — prueba de lo que sucede cuando las personas ponen a la humanidad primero y se niegan a dividirse, incluso ante una injusticia grave y generalizada. Esta marcha no es el final — es una continuación. Seguiremos construyendo, organizando y apoyándonos mutuamente. Solo el pueblo salva al pueblo.
+    </blockquote>
+    <div class="oq-rule"></div>
+    <div class="oq-attr">— @fromtheheartoflongisland</div>
+  </div>
+</section>
+
+<!-- DARK TO LIGHT TRANSITION -->
+<div class="dawn-transition"></div>
+
+<!-- LIGHT WORLD begins here -->
+<div class="light-world">
+
+  <!-- VALUES WEB -->
+  <section class="values-section">
+    <div class="section-wrap">
+      <div class="section-label">El movimiento</div>
+      <h2 class="values-headline">
+        En qué creemos.<br>
+        Lo que estamos <em>construyendo juntos.</em>
+      </h2>
+    </div>
+
+    <div class="web-canvas" style="max-width:1000px; margin:0 auto; padding:0 48px;">
+      <svg viewBox="0 0 904 560" preserveAspectRatio="xMidYMid meet">
+        <path class="web-path" d="M452,280 C450,218 430,130 405,50"/>
+        <path class="web-path" d="M452,280 C405,240 210,168 100,105"/>
+        <path class="web-path" d="M452,280 C500,235 700,155 820,90"/>
+        <path class="web-path" d="M452,280 C390,278 195,272 40,265"/>
+        <path class="web-path" d="M452,280 C515,277 720,268 864,255"/>
+        <path class="web-path" d="M452,280 C408,335 218,438 120,505"/>
+        <path class="web-path" d="M452,280 C498,335 690,435 790,495"/>
+
+        <circle class="web-dot"><animateMotion dur="5s" repeatCount="indefinite" begin="1.5s" path="M452,280 C450,218 430,130 405,50"/></circle>
+        <circle class="web-dot"><animateMotion dur="6s" repeatCount="indefinite" begin="2s"   path="M452,280 C405,240 210,168 100,105"/></circle>
+        <circle class="web-dot"><animateMotion dur="5.5s" repeatCount="indefinite" begin="2.5s" path="M452,280 C500,235 700,155 820,90"/></circle>
+        <circle class="web-dot"><animateMotion dur="4.8s" repeatCount="indefinite" begin="1.8s" path="M452,280 C390,278 195,272 40,265"/></circle>
+        <circle class="web-dot"><animateMotion dur="5.8s" repeatCount="indefinite" begin="2.2s" path="M452,280 C515,277 720,268 864,255"/></circle>
+        <circle class="web-dot"><animateMotion dur="6.2s" repeatCount="indefinite" begin="1.6s" path="M452,280 C408,335 218,438 120,505"/></circle>
+        <circle class="web-dot"><animateMotion dur="5.2s" repeatCount="indefinite" begin="2.8s" path="M452,280 C498,335 690,435 790,495"/></circle>
+      </svg>
+
+      <div class="web-hub">
+        <div class="web-hub-text">From the Heart<br>of Long Island</div>
+      </div>
+
+      <div class="web-node node-pos-0 float-a"><div class="value-pill value-pill-teal">Ayuda Mutua</div></div>
+      <div class="web-node node-pos-1 float-b"><div class="value-pill">Fuera el ICE de Long Island</div></div>
+      <div class="web-node node-pos-2 float-c"><div class="value-pill value-pill-slate">Poder Comunitario</div></div>
+      <div class="web-node node-pos-3 float-d"><div class="value-pill">Hempstead es Hogar</div></div>
+      <div class="web-node node-pos-4 float-e"><div class="value-pill value-pill-teal">Organización Sostenida</div></div>
+      <div class="web-node node-pos-5 float-f"><div class="value-pill">Solo el pueblo salva al pueblo</div></div>
+      <div class="web-node node-pos-6 float-g"><div class="value-pill value-pill-slate">Ningún Ser Humano Es Ilegal</div></div>
+    </div>
+  </section>
+
+  <!-- THREE COMMITMENTS -->
+  <section class="commitments-section">
+    <div class="section-wrap">
+      <div class="section-label">Nuestros compromisos</div>
+      <div class="commitment-list">
+        <div class="commitment-item">
+          <div class="commitment-num">01</div>
+          <div class="commitment-content">
+            <div class="commitment-title">Ayuda Mutua</div>
+            <div class="commitment-body">Conectamos a vecinos con necesidades con vecinos con recursos — no como caridad, sino como solidaridad. Apoyo alimentario, recursos legales, cuidado infantil, redes de respuesta rápida. La comunidad sosteniéndose a sí misma, como siempre lo ha hecho y siempre lo hará.</div>
+          </div>
+        </div>
+        <div class="commitment-item">
+          <div class="commitment-num">02</div>
+          <div class="commitment-content">
+            <div class="commitment-title">Fuera el ICE de Long Island</div>
+            <div class="commitment-body">Nuestra iniciativa fundacional. Nos organizamos junto a las comunidades inmigrantes para defender el derecho de cada vecino a vivir sin miedo. Hempstead es hogar — para todos nosotros. Lo hacemos realidad con poder comunitario sostenido, visible y responsable.</div>
+            <a class="commitment-link" href="https://www.instagram.com/fromtheheartoflongisland/" target="_blank">Sigue la iniciativa →</a>
+          </div>
+        </div>
+        <div class="commitment-item">
+          <div class="commitment-num">03</div>
+          <div class="commitment-content">
+            <div class="commitment-title">Organización Sostenida</div>
+            <div class="commitment-body">No somos un momento. Estamos presentes antes de la crisis, durante ella, y mucho después. El poder comunitario se construye lentamente, en cocinas, estacionamientos y centros comunitarios — relación por relación, año por año.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNITY PHOTOS -->
+  <section class="photos-section">
+    <div class="section-wrap">
+      <div class="section-label">La comunidad</div>
+      <div class="photos-grid">
+        <div class="photo-tile">
+          <a href="https://www.instagram.com/p/DYHUuA4HGkr/" target="_blank">
+            <div class="img-ph photo-tile-img" style="height:230px;">[ photo-leaders.jpg ]</div>
+            <div class="photo-tile-cap">Líderes de la marcha</div>
+          </a>
+        </div>
+        <div class="photo-tile">
+          <a href="https://www.instagram.com/p/DYDJt80n9qR/" target="_blank">
+            <div class="img-ph photo-tile-img" style="height:230px;">[ photo-crowd.jpg ]</div>
+            <div class="photo-tile-cap">La comunidad — Hempstead</div>
+          </a>
+        </div>
+        <div class="photo-tile">
+          <a href="https://www.instagram.com/p/DX44yNpH0kY/" target="_blank">
+            <div class="img-ph photo-tile-img" style="height:230px;">[ photo-community.jpg ]</div>
+            <div class="photo-tile-cap">Una voz de la comunidad</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end light-world -->
+
+<!-- STREET PHOTO -->
+<section class="street-section" id="street-section">
+  <div class="street-wrap" id="street-wrap">
+    <div class="img-ph" style="width:100vw;height:85vh;">[ photo-street.png ] — grows on scroll</div>
+  </div>
+</section>
+
+<!-- BRIDGE -->
+<div class="bridge"><span class="bridge-text">#fromtheheartofli</span></div>
+
+<!-- TAGLINE -->
+<section class="tagline-section" id="tagline-section">
+  <div class="tagline-glow"></div>
+  <div class="tagline-inner">
+    <div class="tagline-full">From the Heart of Long Island: <em>la Iniciativa Fuera el ICE de Long Island.</em></div>
+    <div class="ice-cascade">
+      <span class="ice-line ice-line-1" id="ice1">Fuera el ICE de Hempstead.</span>
+      <span class="ice-line ice-line-2" id="ice2">Fuera el ICE de Long Island.</span>
+      <span class="ice-line ice-line-3" id="ice3">Fuera el ICE de todas partes.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-motto">Solo el pueblo salva al pueblo.</div>
+    <div class="footer-bar">
+      <nav class="footer-nav">
+        <a href="#">Acerca de</a>
+        <a href="#">Necesito ayuda</a>
+        <a href="#">Quiero ayudar</a>
+      </nav>
+      <a class="footer-ig" href="https://www.instagram.com/fromtheheartoflongisland/" target="_blank">
+        <div class="footer-ig-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="rgba(255,255,255,0.3)" stroke="none"/>
+          </svg>
+        </div>
+        <span class="footer-ig-handle">@fromtheheartoflongisland</span>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Generate subtle stars
+const starsEl = document.getElementById('stars');
+for (let i = 0; i < 80; i++) {
+  const s = document.createElement('div');
+  s.className = 'star';
+  const size = Math.random() * 2 + 0.5;
+  s.style.cssText = `
+    left:${Math.random()*100}%;
+    top:${Math.random()*100}%;
+    width:${size}px;
+    height:${size}px;
+    --sd:${(Math.random()*4+2).toFixed(1)}s;
+    --ss:${(Math.random()*4).toFixed(1)}s;
+    --so:${(Math.random()*0.35+0.05).toFixed(2)};
+  `;
+  starsEl.appendChild(s);
+}
+
+// IntersectionObserver
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.opening-quote-inner, .commitment-item, .photo-tile').forEach(el => observer.observe(el));
+
+// Street scroll
+const streetSection = document.getElementById('street-section');
+const streetWrap = document.getElementById('street-wrap');
+
+function updateStreet() {
+  const rect = streetSection.getBoundingClientRect();
+  const vh = window.innerHeight;
+  const p = Math.max(0, Math.min(1, (vh - rect.top) / (vh + rect.height)));
+  const eased = 1 - Math.pow(1 - p, 3);
+  streetWrap.style.transform = `scale(${0.4 + eased * 0.62})`;
+  streetWrap.style.borderRadius = `${Math.max(0, 18 - eased * 18)}px`;
+}
+
+// ICE cascade
+const taglineSection = document.getElementById('tagline-section');
+let cascadeDone = false;
+function checkCascade() {
+  if (cascadeDone) return;
+  if (taglineSection.getBoundingClientRect().top < window.innerHeight * 0.8) {
+    cascadeDone = true;
+    ['ice1','ice2','ice3'].forEach((id, i) => {
+      document.getElementById(id).style.animation = `riseIn 0.8s ease ${i * 0.38}s forwards`;
+    });
+  }
+}
+
+window.addEventListener('scroll', () => { requestAnimationFrame(updateStreet); checkCascade(); }, { passive: true });
+updateStreet();
+</script>
+</body>
+</html>
