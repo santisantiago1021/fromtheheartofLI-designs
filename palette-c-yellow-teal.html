@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From the Heart of Long Island — A: Forest, Yellow &amp; Teal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       DESIGN SYSTEM
+       Sourced directly from brand Instagram:
+       - Deep forest green (vigil graphic, logo)
+       - Warm cream / parchment (body warmth)
+       - Gold (honor, memory, community)
+       - Near-black with green undertone (depth)
+       No red. No abstract concepts.
+       Photo-forward. Community voice. Direct.
+    ============================================ */
+
+    :root {
+      --green-deep:   #0F1F16;   /* darkest, nav + footer */
+      --green-brand:  #183528;   /* primary brand green */
+      --green-mid:    #245C42;   /* buttons, cards */
+      --green-light:  #3A7A60;   /* hover, accents */
+      --green-mist:   #EDF3EF;   /* light section bg */
+      --cream:        #F2EBD9;   /* warm body */
+      --cream-dark:   #E5DBC7;   /* borders, dividers */
+      --gold:         #F5A911;   /* accent: brand yellow */
+      --gold-light:   #FAD97E;   /* lighter yellow */
+      --teal:         #007EA6;   /* brand teal */
+      --teal-light:   #3399C0;   /* lighter teal */
+      --text-dark:    #0F1F16;
+      --text-body:    #2C3E32;
+      --text-muted:   #5A7060;
+      --white:        #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      color: var(--text-dark);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* ── DISTRESS BAR ────────────────────────── */
+    .distress-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: #1A1A1A;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 24px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .distress-bar-text {
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.02em;
+    }
+
+    .distress-bar-text strong {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .distress-bar-btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--teal);
+      padding: 6px 18px;
+      border-radius: 2px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .distress-bar-btn:hover { background: var(--teal-light); }
+
+    .distress-bar-dismiss {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.4);
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      padding: 4px 8px;
+      transition: color 0.2s;
+    }
+
+    .distress-bar-dismiss:hover { color: rgba(255,255,255,0.8); }
+
+
+
+    /* ── HERO ─────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 640px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: var(--green-brand);
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    /* Gradient overlay — pulls text out of photo, lets the march breathe above */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(9, 22, 14, 0.95) 0%,
+        rgba(9, 22, 14, 0.72) 30%,
+        rgba(9, 22, 14, 0.30) 60%,
+        rgba(9, 22, 14, 0.05) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 64px 72px;
+      max-width: 860px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Barlow', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-headline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(56px, 8vw, 96px);
+      line-height: 0.95;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 24px;
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-family: 'Barlow', sans-serif;
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 300;
+      line-height: 1.6;
+      color: rgba(242,235,217,0.80);
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    .hero-sub strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      background: var(--teal);
+      color: var(--white);
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover {
+      background: var(--teal-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(242,235,217,0.4);
+      border-radius: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(242,235,217,0.8);
+      color: var(--white);
+    }
+
+    /* Scroll indicator */
+    .hero-scroll {
+      position: absolute;
+      bottom: 32px;
+      right: 64px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(242,235,217,0.4);
+      font-family: 'Barlow', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(242,235,217,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-scroll-line::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--gold);
+      animation: slide-right 2s ease-in-out infinite;
+    }
+
+    @keyframes slide-right {
+      0%   { left: -100%; }
+      50%  { left: 0%; }
+      100% { left: 100%; }
+    }
+
+    /* ── TICKER STRIP ─────────────────────────── */
+    .ticker {
+      background: var(--gold);
+      overflow: hidden;
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ticker-track {
+      display: flex;
+      gap: 0;
+      animation: ticker-scroll 30s linear infinite;
+      white-space: nowrap;
+    }
+
+    .ticker-item {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--green-deep);
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .ticker-item::after {
+      content: '✦';
+      font-size: 10px;
+      color: var(--green-brand);
+    }
+
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── WHO WE ARE ───────────────────────────── */
+    /* ── PHOTO STRIP ──────────────────────────── */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: 320px;
+      gap: 3px;
+    }
+
+    .photo-strip-item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .photo-strip-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .photo-strip-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .photo-strip-item:first-child { grid-column: span 1; object-position: top; }
+
+    @media (max-width: 700px) {
+      .photo-strip { grid-template-columns: 1fr; height: auto; }
+      .photo-strip-item { height: 220px; }
+    }
+
+    /* ── WHO WE ARE ───────────────────────────── */
+    .who {
+      background: var(--cream);
+      padding: 96px 64px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .who-label {
+      font-family: 'Barlow', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .who h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(40px, 5vw, 60px);
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--green-brand);
+      margin-bottom: 28px;
+    }
+
+    .who h2 span {
+      color: var(--text-muted);
+      font-weight: 400;
+      font-size: 0.6em;
+      display: block;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+      text-transform: none;
+      font-family: 'Barlow', sans-serif;
+      margin-top: 6px;
+    }
+
+    .who-text p {
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text-body);
+      margin-bottom: 20px;
+    }
+
+    .who-text p:last-child { margin-bottom: 0; }
+
+    .who-text strong {
+      color: var(--green-brand);
+      font-weight: 600;
+    }
+
+    .who-quote {
+      border-left: 3px solid var(--gold);
+      padding-left: 24px;
+      margin-top: 32px;
+    }
+
+    .who-quote blockquote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--green-brand);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    .who-quote cite {
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      font-style: normal;
+    }
+
+    /* ── THREE PILLARS ────────────────────────── */
+    .pillars {
+      background: var(--green-deep);
+      padding: 80px 64px;
+    }
+
+    .pillars-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .pillars-header .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .pillars-header h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(32px, 4vw, 48px);
+      text-transform: uppercase;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .pillar {
+      background: var(--green-brand);
+      padding: 48px 40px;
+      position: relative;
+      transition: background 0.25s;
+      cursor: default;
+    }
+
+    .pillar:hover {
+      background: var(--green-mid);
+    }
+
+    .pillar-number {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 72px;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(176,141,87,0.15);
+      position: absolute;
+      top: 24px;
+      right: 32px;
+      letter-spacing: -0.03em;
+    }
+
+    .pillar-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(176,141,87,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 20px;
+    }
+
+    .pillar h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 28px;
+      text-transform: uppercase;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .pillar-spanish {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .pillar p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(242,235,217,0.72);
+    }
+
+    .pillar-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+
+    .pillar-link:hover { gap: 10px; }
+
+    /* ── ACTION SECTION ───────────────────────── */
+    .action {
+      background: var(--cream);
+      padding: 96px 64px;
+    }
+
+    .action-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .action-header {
+      margin-bottom: 56px;
+    }
+
+    .action-header .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .action-header h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: clamp(36px, 4vw, 52px);
+      text-transform: uppercase;
+      color: var(--green-brand);
+      line-height: 1;
+    }
+
+    .action-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .action-card {
+      border: 1px solid var(--cream-dark);
+      padding: 40px 36px;
+      text-decoration: none;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.25s, transform 0.2s;
+      background: var(--white);
+    }
+
+    .action-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .action-card:hover {
+      border-color: var(--green-mid);
+      transform: translateY(-3px);
+    }
+
+    .action-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .action-card-flag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .action-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 30px;
+      text-transform: uppercase;
+      color: var(--green-brand);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .action-card-spanish {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .action-card p {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-body);
+    }
+
+    .action-card-arrow {
+      margin-top: 28px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s;
+    }
+
+    .action-card:hover .action-card-arrow {
+      gap: 10px;
+    }
+
+    /* ── ICE CASCADE ──────────────────────────── */
+    .ice-cascade {
+      background: var(--green-deep);
+      padding: 96px 64px;
+      text-align: center;
+    }
+
+    .ice-cascade .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 48px;
+      display: block;
+    }
+
+    .cascade-line {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: rgba(242,235,217,0.25);
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+      transition: color 0.3s;
+      cursor: default;
+    }
+
+    .cascade-line:nth-child(2) { font-size: clamp(32px, 5vw, 56px); }
+    .cascade-line:nth-child(3) { font-size: clamp(44px, 7vw, 80px); }
+    .cascade-line:nth-child(4) { font-size: clamp(60px, 9.5vw, 112px); }
+
+    .cascade-line:hover { color: var(--cream); }
+    .cascade-line:nth-child(4):hover { color: var(--gold); }
+
+    .cascade-divider {
+      width: 1px;
+      height: 32px;
+      background: rgba(176,141,87,0.3);
+      margin: 8px auto;
+    }
+
+    /* ── COMMUNITY VOICE ──────────────────────── */
+    .voice {
+      background: var(--green-mist);
+      padding: 96px 64px;
+    }
+
+    .voice-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .voice .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    .voice-quote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--green-brand);
+      margin-bottom: 32px;
+      font-style: italic;
+      letter-spacing: 0.01em;
+    }
+
+    .voice-divider {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 24px;
+    }
+
+    .voice-attribution {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+
+    /* ── FOOTER BILINGUAL ────────────────────── */
+    .footer-bilingual {
+      display: flex;
+      gap: 40px;
+      align-items: baseline;
+    }
+
+    .footer-en {
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(242,235,217,0.65);
+      flex: 1;
+    }
+
+    .footer-es {
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(242,235,217,0.40);
+      flex: 1;
+      text-align: right;
+      font-style: italic;
+    }
+
+    @media (max-width: 700px) {
+      .footer-bilingual { flex-direction: column; gap: 8px; }
+      .footer-es { text-align: left; }
+    }
+
+
+    /* ── VOICE ASIDE (joyful resistance) ────────── */
+    .voice-aside {
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 32px;
+      opacity: 0.75;
+    }
+
+    /* ── FOOTER ───────────────────────────────── */
+    footer {
+      background: var(--green-deep);
+      padding: 64px 64px 40px;
+      border-top: 1px solid rgba(176,141,87,0.2);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(242,235,217,0.5);
+      max-width: 380px;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-nav a {
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(242,235,217,0.6);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--gold-light); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(242,235,217,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      color: rgba(242,235,217,0.3);
+    }
+
+    .footer-gold {
+      color: var(--gold);
+      opacity: 0.7;
+      font-size: 14px;
+    }
+
+    /* ── SCROLL REVEALS ───────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── RESPONSIVE ────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+        .hero-content { padding: 0 32px 56px; }
+      .hero-scroll { display: none; }
+
+      .who {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 64px 32px;
+      }
+
+      .pillars { padding: 64px 32px; }
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .action { padding: 64px 32px; }
+      .action-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .ice-cascade { padding: 64px 32px; }
+      .voice { padding: 64px 32px; }
+
+      footer { padding: 48px 32px 32px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-nav { flex-wrap: wrap; gap: 20px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DISTRESS BAR -->
+  <div class="distress-bar" id="distressBar">
+    <p class="distress-bar-text">
+      <strong>Was someone you love just detained by ICE?</strong>
+      &nbsp;Know exactly what to do — step by step.
+    </p>
+    <a href="#" class="distress-bar-btn">What to do right now →</a>
+    <button class="distress-bar-dismiss" id="dismissBar" aria-label="Dismiss">×</button>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-photo">
+      <img src="march-street.png" alt="March for Humanity — Hempstead community marching through a neighborhood street">
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-headline">
+        From the<br>
+        Heart of<br>
+        <em>Long Island</em>
+      </h1>
+
+      <p class="hero-sub">
+        <strong>Un movimiento de ayuda mutua.</strong> Rooted in Hempstead.
+        A powerful show of collective care, courage, and solidarity.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          Necesito Ayuda / I Need Help
+        </a>
+        <a href="#" class="btn-outline">Quiero Ayudar / I Want to Help</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      Scroll
+    </div>
+
+  </section>
+
+  <!-- PHOTO STRIP -->
+  <div class="photo-strip">
+    <div class="photo-strip-item">
+      <img src="ashley-nadia.jpg" alt="Community members speaking at a rally">
+    </div>
+    <div class="photo-strip-item">
+      <img src="geraldine-may-day.jpg" alt="Community members chanting at a protest">
+    </div>
+    <div class="photo-strip-item">
+      <img src="sandra-abolish-ice.jpg" alt="Abolish ICE — No Human is Illegal flag at the March for Humanity">
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-item">ICE Out of Hempstead</div>
+      <div class="ticker-item">Migration is Sacred</div>
+      <div class="ticker-item">ICE Out of Long Island</div>
+      <div class="ticker-item">El Pueblo Unido Jamás Será Vencido</div>
+      <div class="ticker-item">Hempstead is Home</div>
+      <div class="ticker-item">ICE Out of Everywhere</div>
+      <div class="ticker-item">Ningún Ser Humano Es Ilegal</div>
+      <div class="ticker-item">ICE Out of Hempstead</div>
+      <div class="ticker-item">Migration is Sacred</div>
+      <div class="ticker-item">ICE Out of Long Island</div>
+      <div class="ticker-item">El Pueblo Unido Jamás Será Vencido</div>
+      <div class="ticker-item">Hempstead is Home</div>
+      <div class="ticker-item">ICE Out of Everywhere</div>
+      <div class="ticker-item">Ningún Ser Humano Es Ilegal</div>
+    </div>
+  </div>
+
+  <!-- WHO WE ARE -->
+  <section class="who">
+    <div>
+      <p class="who-label">Quiénes somos · Who we are</p>
+      <h2>
+        We Are the<br>Community
+        <span>Somos la comunidad</span>
+      </h2>
+      <div class="who-quote">
+        <blockquote>"Only the people save the people."</blockquote>
+
+      </div>
+    </div>
+    <div class="who-text">
+      <p>
+        From the Heart of Long Island is a community space rooted in Hempstead,
+        built on mutual aid, sustained organizing, and the belief that collective
+        care is how neighborhoods thrive.
+      </p>
+      <p>
+        This is a space for connection — to resources, relationships, and work
+        that outlasts any single campaign. When we hold each other up through
+        whatever comes, we <em>[PLACEHOLDER TEXT]</em>...
+      </p>
+      <p>
+        Our collective power shapes the just and equitable world we deserve.
+        <strong>Hempstead is all of us. Hempstead is home.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- THREE PILLARS -->
+  <section class="pillars">
+    <div class="pillars-grid">
+
+      <div class="pillar reveal">
+        <div class="pillar-number">01</div>
+        
+        <h3>Mutual Aid</h3>
+        <span class="pillar-spanish">Ayuda Mutua</span>
+        <p>
+          Connecting Hempstead families with food, legal resources, emergency
+          support, and know-your-rights education. Neighbors helping neighbors —
+          not waiting for systems that have failed us.
+        </p>
+        <a href="#" class="pillar-link">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="pillar reveal reveal-delay-1">
+        <div class="pillar-number">02</div>
+        
+        <h3>ICE Out of Long Island</h3>
+        <span class="pillar-spanish">Fuera el ICE de Long Island</span>
+        <p>
+          We organize, protest, and demand accountability. ICE enforcement
+          terrorizes our community. We document it, fight it, and stand with
+          every family that's been targeted.
+        </p>
+        <a href="#" class="pillar-link">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="pillar reveal reveal-delay-2">
+        <div class="pillar-number">03</div>
+        
+        <h3>Sustained Organizing</h3>
+        <span class="pillar-spanish">Organización Sostenida</span>
+        <p>
+          This march is not the end — it's a continuation. We will keep
+          building, organizing, and showing up for one another. Real change
+          takes time, and we're here for all of it.
+        </p>
+        <a href="#" class="pillar-link">
+          Learn more
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACTION CARDS -->
+  <section class="action">
+    <div class="action-inner">
+      <div class="action-header reveal">
+        <p class="section-label">Take action · Actúa ahora</p>
+        <h2>How Can We<br>Help Each Other?</h2>
+      </div>
+      <div class="action-cards">
+
+        <a href="#" class="action-card reveal">
+          <span class="action-card-flag">Para miembros de la comunidad · For community members</span>
+          <h3>Necesito Ayuda</h3>
+          <span class="action-card-spanish">I Need Help</span>
+          <p>
+            Facing an immigration situation, looking for resources,
+            or need to know your rights? We're here. No questions asked.
+          </p>
+          <div class="action-card-arrow">
+            Get support
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <a href="#" class="action-card reveal reveal-delay-1">
+          <span class="action-card-flag">Para aliados y vecinos · For allies &amp; neighbors</span>
+          <h3>Quiero Ayudar</h3>
+          <span class="action-card-spanish">I Want to Help</span>
+          <p>
+            Volunteer, donate, or show up. There are many ways to
+            be part of a movement. Find out how your skills and time can contribute.
+          </p>
+          <div class="action-card-arrow">
+            Get involved
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <a href="#" class="action-card reveal reveal-delay-2">
+          <span class="action-card-flag">Para todos · For everyone</span>
+          <h3>Aprende Más</h3>
+          <span class="action-card-spanish">Learn More</span>
+          <p>
+            Understand what ICE enforcement means for Long Island,
+            the history of the movement, and how mutual aid works in practice.
+          </p>
+          <div class="action-card-arrow">
+            Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ICE CASCADE -->
+  <section class="ice-cascade">
+    <span class="section-label">It is our collective power that shapes the just and equitable world we deserve</span>
+    <p class="cascade-line">ICE Out of Hempstead.</p>
+    <div class="cascade-divider"></div>
+    <p class="cascade-line">ICE Out of Long Island.</p>
+    <div class="cascade-divider"></div>
+    <p class="cascade-line">ICE Out of Everywhere.</p>
+  </section>
+
+  <!-- COMMUNITY VOICE -->
+  <section class="voice">
+    <div class="voice-inner reveal">
+      <span class="section-label">La comunidad habla</span>
+      <p class="voice-aside">"We are basking in the afterglow of joyful resistance."</p>
+      <p class="voice-quote">
+        "We are part of a long history of people-powered victories — proof
+        of what happens when people put humanity first and refuse to be divided,
+        even in the face of grave and rampant injustice."
+      </p>
+      <div class="voice-divider"></div>
+      <p class="voice-attribution">— From the Heart of Long Island, May 1, 2025</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>From the Heart of Long Island</h3>
+        <div class="footer-bilingual">
+          <p class="footer-en">Sending our deepest gratitude from the heart of Long Island.</p>
+          <p class="footer-es">Enviando nuestra más profunda gratitud desde el corazón de Long Island.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 From the Heart of Long Island · fromtheheartoflongisland.org</p>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Nav background on scroll
+    const navEl = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      navEl.style.borderBottomColor = window.scrollY > 80
+        ? 'rgba(176,141,87,0.4)'
+        : 'rgba(176,141,87,0.25)';
+    }, { passive: true });
+
+    // Distress bar dismiss
+    const distressBar = document.getElementById('distressBar');
+    const dismissBtn = document.getElementById('dismissBar');
+    dismissBtn.addEventListener('click', () => {
+      distressBar.style.display = 'none';
+      navEl.classList.add('bar-hidden');
+      // Also shift hero up
+      document.querySelector('.hero').style.marginTop = '0';
+    });
+  </script>
+
+</body>
+</html>
