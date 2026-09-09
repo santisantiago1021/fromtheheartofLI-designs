@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>March for Humanity — ICE Out of Long Island · From the Heart of Long Island</title>
+  <meta name="description" content="On May 1, 2025, thousands marched through Hempstead in the ICE Out of Long Island March for Humanity. A coalition of 25+ organizations demanding dignity, an end to deportations, and ICE out of Long Island.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================
+       MARCH FOR HUMANITY — BRAND PALETTE
+       Core:    #651D11  #D6924B  #A66E4F  #BF1414
+       Accent:  #F5A911  #007EA6
+       Base:    #FAF6F5  #000000
+       Type:    Bebas Neue / Barlow Condensed / Barlow
+    ============================================ */
+
+    :root {
+      --maroon:       #651D11;   /* darkest — hero bg, dark sections */
+      --red:          #BF1414;   /* primary red — key accents */
+      --amber:        #D6924B;   /* warm gold — mid accent */
+      --tan:          #A66E4F;   /* muted brown — borders, dividers */
+      --gold:         #F5A911;   /* bright accent — ticker, highlights */
+      --blue:         #007EA6;   /* secondary accent */
+      --cream:        #FAF6F5;   /* page background */
+      --black:        #000000;
+      --text-body:    #1A0A07;   /* near-black with warm undertone */
+      --text-muted:   #6B4A3A;
+      --white:        #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      color: var(--text-body);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    /* ── DISTRESS BAR ─────────────────────────── */
+    .distress-bar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: #1A1A1A;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 24px;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .distress-bar-text {
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.02em;
+    }
+
+    .distress-bar-text strong { font-weight: 600; color: #fff; }
+
+    .distress-bar-btn {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #1A1A1A;
+      background: var(--gold);
+      padding: 6px 18px;
+      border-radius: 2px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+
+    .distress-bar-btn:hover { background: var(--amber); }
+
+    .distress-bar-dismiss {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.4);
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      padding: 4px 8px;
+      transition: color 0.2s;
+    }
+
+    .distress-bar-dismiss:hover { color: rgba(255,255,255,0.8); }
+
+    /* ── HERO ─────────────────────────────────── */
+    .hero {
+      background: var(--maroon);
+      padding-top: 44px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle texture: diagonal stripe overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(255,255,255,0.015) 40px,
+        rgba(255,255,255,0.015) 41px
+      );
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 72px 64px 56px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.40);
+      text-decoration: none;
+      margin-bottom: 48px;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--gold); }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 32px;
+      height: 2px;
+      background: var(--red);
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400; /* Bebas Neue is inherently bold */
+      font-size: clamp(56px, 10vw, 130px);
+      line-height: 0.92;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .hero h1 .red { color: var(--red); }
+    .hero h1 .gold { color: var(--gold); }
+
+    .hero-date {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 32px;
+      margin-top: 12px;
+    }
+
+    .hero-statement {
+      background: rgba(0,0,0,0.25);
+      border-left: 4px solid var(--red);
+      padding: 22px 28px;
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    .hero-statement p {
+      font-family: 'Barlow', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      color: rgba(250,246,245,0.80);
+    }
+
+    /* ── TICKER ───────────────────────────────── */
+    .ticker {
+      background: var(--gold);
+      overflow: hidden;
+      height: 44px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ticker-track {
+      display: flex;
+      animation: ticker-scroll 28s linear infinite;
+      white-space: nowrap;
+    }
+
+    .ticker-item {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--maroon);
+      padding: 0 44px;
+      display: flex;
+      align-items: center;
+      gap: 44px;
+    }
+
+    .ticker-item::after {
+      content: '★';
+      font-size: 10px;
+      color: var(--red);
+    }
+
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── SECTION SHARED STYLES ────────────────── */
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    /* ── WHY NOW ──────────────────────────────── */
+    .why-section {
+      background: var(--cream);
+      padding: 96px 64px;
+    }
+
+    .why-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 96px;
+      align-items: start;
+    }
+
+    .why-section .section-label { color: var(--text-muted); }
+
+    .why-left h2 {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: clamp(52px, 6vw, 80px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+
+    .why-left .pull {
+      border-left: 4px solid var(--red);
+      padding-left: 24px;
+      margin-top: 32px;
+    }
+
+    .why-left .pull p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.3;
+      color: var(--maroon);
+    }
+
+    .why-right p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 20px;
+    }
+
+    .why-right p:last-child { margin-bottom: 0; }
+    .why-right strong { color: var(--maroon); font-weight: 600; }
+
+    /* ── WHY HEMPSTEAD ────────────────────────── */
+    .hempstead-section {
+      background: var(--black);
+      padding: 96px 64px;
+    }
+
+    .hempstead-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .hempstead-section .section-label { color: var(--gold); }
+
+    .hempstead-section h2 {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 32px;
+      letter-spacing: 0.02em;
+    }
+
+    .hempstead-section p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: rgba(250,246,245,0.72);
+      margin-bottom: 20px;
+    }
+
+    .hempstead-section p strong { color: var(--cream); font-weight: 600; }
+    .hempstead-section p:last-child { margin-bottom: 0; }
+
+    .stat-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.05);
+      padding: 28px 24px;
+      border-top: 3px solid var(--red);
+    }
+
+    .stat-number {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 56px;
+      line-height: 1;
+      color: var(--gold);
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: rgba(250,246,245,0.50);
+    }
+
+    /* ── DEMANDS ──────────────────────────────── */
+    .demands-section {
+      background: var(--red);
+      padding: 96px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .demands-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(0,0,0,0.04) 40px,
+        rgba(0,0,0,0.04) 41px
+      );
+      pointer-events: none;
+    }
+
+    .demands-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .demands-section .section-label { color: rgba(255,255,255,0.60); }
+
+    .demands-section h2 {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: clamp(56px, 8vw, 110px);
+      line-height: 0.92;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 56px;
+      letter-spacing: 0.02em;
+    }
+
+    .demands-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .demand {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: baseline;
+      gap: 28px;
+    }
+
+    .demand:first-child { border-top: 1px solid rgba(255,255,255,0.12); }
+
+    .demand-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.30);
+      flex-shrink: 0;
+      width: 28px;
+    }
+
+    .demand h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      margin-right: 16px;
+      flex-shrink: 0;
+    }
+
+    .demand p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: rgba(250,246,245,0.72);
+    }
+
+    /* ── HARM EXAMPLES ────────────────────────── */
+    .harm-section {
+      background: var(--cream);
+      padding: 96px 64px;
+    }
+
+    .harm-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .harm-section .section-label { color: var(--text-muted); }
+
+    .harm-section h2 {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: var(--maroon);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .harm-intro {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 48px;
+      font-style: italic;
+    }
+
+    .harm-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 860px;
+    }
+
+    .harm-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--cream-dark, #E5DBC7);
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+      align-items: baseline;
+    }
+
+    .harm-item:first-child { border-top: 1px solid #E0D4CA; }
+
+    .harm-item h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--maroon);
+      letter-spacing: 0.08em;
+      line-height: 1.3;
+    }
+
+    .harm-item p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--text-body);
+    }
+
+    /* ── OUR GOAL ─────────────────────────────── */
+    .goal-section {
+      background: var(--maroon);
+      padding: 96px 64px;
+    }
+
+    .goal-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .goal-section .section-label { color: var(--amber); }
+
+    .goal-section h2 {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: clamp(48px, 7vw, 96px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 40px;
+      letter-spacing: 0.02em;
+    }
+
+    .goal-quote {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--gold);
+      margin-bottom: 32px;
+      letter-spacing: 0.01em;
+      border-left: 4px solid var(--amber);
+      padding-left: 28px;
+    }
+
+    .goal-divider {
+      width: 48px;
+      height: 3px;
+      background: var(--red);
+      margin-bottom: 32px;
+    }
+
+    .goal-body {
+      font-size: 18px;
+      line-height: 1.8;
+      color: rgba(250,246,245,0.78);
+      margin-bottom: 20px;
+    }
+
+    .goal-body strong { color: var(--cream); font-weight: 600; }
+
+    /* ── PARTNERS ─────────────────────────────── */
+    .partners-section {
+      background: var(--black);
+      padding: 96px 64px;
+    }
+
+    .partners-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .partners-section .section-label { color: var(--gold); }
+
+    .partners-section h2 {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+
+    .partners-intro {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(250,246,245,0.55);
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-bottom: 24px;
+    }
+
+    .partner-card {
+      background: rgba(255,255,255,0.05);
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      text-align: center;
+      min-height: 110px;
+      gap: 10px;
+      transition: background 0.2s;
+    }
+
+    .partner-card:hover { background: rgba(255,255,255,0.10); }
+
+    .partner-card img {
+      max-height: 50px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.70;
+      transition: opacity 0.2s;
+    }
+
+    .partner-card:hover img { opacity: 1; }
+
+    .partner-card .partner-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(250,246,245,0.60);
+      line-height: 1.3;
+      transition: color 0.2s;
+    }
+
+    .partner-card:hover .partner-name { color: var(--gold); }
+
+    .partner-card.has-logo .partner-name {
+      font-size: 10px;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .partner-card.has-logo:hover .partner-name { opacity: 1; }
+
+    /* ── CASCADE ──────────────────────────────── */
+    .cascade-section {
+      background: var(--cream);
+      padding: 96px 64px;
+      text-align: center;
+      border-top: 6px solid var(--red);
+    }
+
+    .cascade-section .section-label {
+      color: var(--text-muted);
+      margin-bottom: 48px;
+    }
+
+    .cascade-line {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: rgba(101,29,17,0.18);
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      transition: color 0.3s;
+      cursor: default;
+    }
+
+    .cascade-line:nth-child(2) { font-size: clamp(36px, 5vw, 60px); }
+    .cascade-line:nth-child(3) { font-size: clamp(48px, 7vw, 88px); }
+    .cascade-line:nth-child(4) { font-size: clamp(64px, 10vw, 120px); }
+
+    .cascade-line:hover { color: var(--maroon); }
+    .cascade-line:nth-child(4):hover { color: var(--red); }
+
+    .cascade-divider {
+      width: 2px;
+      height: 28px;
+      background: var(--amber);
+      margin: 10px auto;
+    }
+
+    /* ── CTA / CONTACT ───────────────────────── */
+    .cta-section {
+      background: var(--maroon);
+      padding: 80px 64px;
+    }
+
+    .cta-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .cta-section h2 {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: clamp(40px, 5vw, 64px);
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 16px;
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+    }
+
+    .cta-section p {
+      font-size: 17px;
+      line-height: 1.75;
+      color: rgba(250,246,245,0.70);
+      margin-bottom: 32px;
+    }
+
+    .btn-primary {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--maroon);
+      border-radius: 2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: var(--amber); transform: translateY(-1px); }
+
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      padding: 18px 20px;
+      background: rgba(0,0,0,0.20);
+      transition: background 0.2s;
+    }
+
+    .social-link:hover { background: rgba(0,0,0,0.35); }
+
+    .social-link-icon { font-size: 20px; flex-shrink: 0; }
+
+    .social-link-text {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+
+    .social-link-sub {
+      font-size: 12px;
+      color: rgba(250,246,245,0.50);
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0;
+      font-family: 'Barlow', sans-serif;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* ── FOOTER ───────────────────────────────── */
+    footer {
+      background: var(--black);
+      padding: 56px 64px 40px;
+      border-top: 4px solid var(--red);
+    }
+
+    .footer-top { margin-bottom: 40px; }
+
+    .footer-brand h3 {
+      font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .footer-bilingual { display: flex; gap: 40px; align-items: baseline; }
+    .footer-en { font-size: 14px; line-height: 1.5; color: rgba(250,246,245,0.55); flex: 1; }
+    .footer-es { font-size: 14px; line-height: 1.5; color: rgba(250,246,245,0.35); flex: 1; text-align: right; font-style: italic; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(250,246,245,0.08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p { font-size: 12px; letter-spacing: 0.05em; color: rgba(250,246,245,0.28); }
+
+    /* ── REVEAL ───────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── RESPONSIVE ─────────────────────────── */
+    @media (max-width: 1024px) {
+      .partners-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner { padding: 48px 32px 48px; }
+      .why-section { padding: 64px 32px; }
+      .why-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hempstead-section { padding: 64px 32px; }
+      .hempstead-inner { grid-template-columns: 1fr; gap: 48px; }
+      .stat-block { grid-template-columns: 1fr 1fr; }
+      .demands-section { padding: 64px 32px; }
+      .demand { grid-template-columns: 40px 1fr; gap: 16px; }
+      .harm-section { padding: 64px 32px; }
+      .harm-grid { grid-template-columns: 1fr; }
+      .goal-section { padding: 64px 32px; }
+      .partners-section { padding: 64px 32px; }
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+      .cascade-section { padding: 64px 32px; }
+      .cta-section { padding: 64px 32px; }
+      .cta-inner { grid-template-columns: 1fr; gap: 48px; }
+      footer { padding: 48px 32px 32px; }
+      .footer-bilingual { flex-direction: column; gap: 8px; }
+      .footer-es { text-align: left; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- DISTRESS BAR -->
+  <div class="distress-bar" id="distressBar">
+    <p class="distress-bar-text">
+      <strong>Was someone you love just detained by ICE?</strong>
+      &nbsp;Know exactly what to do — step by step.
+    </p>
+    <a href="distress.html" class="distress-bar-btn">What to do right now →</a>
+    <button class="distress-bar-dismiss" id="dismissBar" aria-label="Dismiss">×</button>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <a href="palette-a-forest-gold.html" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Back to home
+      </a>
+      <p class="hero-eyebrow">May 1, 2025 · Hempstead, New York · International Workers' Day</p>
+      <h1>
+        <span class="red">ICE Out</span><br>
+        of Long Island:<br>
+        <span class="gold">March for</span><br>
+        Humanity
+      </h1>
+      <p class="hero-date">Friday, May 1st · Line up 3:00 PM · Hempstead, NY</p>
+      <div class="hero-statement">
+        <p>
+          The organizers of this march were unwavering in their commitment to nonviolent action.
+          We trust in our participants to model those same principles through non-engagement
+          and de-escalation. This march was not the beginning — it was a continuation.
+          And it will not be the end.
+        </p>
+      </div>
+    </div>
+
+    <!-- TICKER -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-item">ICE Out of Hempstead</div>
+        <div class="ticker-item">Migration is Sacred</div>
+        <div class="ticker-item">ICE Out of Long Island</div>
+        <div class="ticker-item">El Pueblo Unido Jamás Será Vencido</div>
+        <div class="ticker-item">Hempstead is Home</div>
+        <div class="ticker-item">ICE Out of Everywhere</div>
+        <div class="ticker-item">Ningún Ser Humano Es Ilegal</div>
+        <div class="ticker-item">ICE Out of Hempstead</div>
+        <div class="ticker-item">Migration is Sacred</div>
+        <div class="ticker-item">ICE Out of Long Island</div>
+        <div class="ticker-item">El Pueblo Unido Jamás Será Vencido</div>
+        <div class="ticker-item">Hempstead is Home</div>
+        <div class="ticker-item">ICE Out of Everywhere</div>
+        <div class="ticker-item">Ningún Ser Humano Es Ilegal</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY NOW -->
+  <section class="why-section">
+    <div class="why-inner">
+
+      <div class="why-left reveal">
+        <span class="section-label">¿Por qué ahora? · Why now</span>
+        <h2>The Heart of Long Island Is Under Attack.</h2>
+        <div class="pull">
+          <p>"Only the people save the people."</p>
+        </div>
+      </div>
+
+      <div class="why-right reveal reveal-delay-1">
+        <p>
+          This International Workers' Day — a day rooted as much in global struggle as in solidarity —
+          the Village of Hempstead called on communities from Long Island to New York City and beyond
+          to join the ICE Out of Long Island: March for Humanity mobilization.
+        </p>
+        <p>
+          May Day is about workers, immigrants, organizers, and everyday people coming together
+          to demand dignity, safety, and fair treatment. That history is not separate from this
+          moment — it is <strong>a continuation</strong>. The same forces that exploit labor and
+          divide communities are fueling fear and enforcement in places like Hempstead.
+        </p>
+        <p>
+          Stand with us — in defense of democracy, for an end to ceaseless detentions and
+          deportations, for the dignity of our workers, unions, and immigrants —
+          the very backbone of our society.
+          <strong>International Workers' Day reminds us that this fight belongs to all of us.</strong>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHY HEMPSTEAD -->
+  <section class="hempstead-section">
+    <div class="hempstead-inner">
+
+      <div class="reveal">
+        <span class="section-label">¿Por qué Hempstead? · Why Hempstead</span>
+        <h2>The Heart of Long Island.</h2>
+        <p>
+          The Village of Hempstead is home to nearly <strong>60,000 people</strong> within Nassau County,
+          Long Island, New York. It is one of the most segregated regions in the country —
+          and one of the most intensely targeted by ICE.
+        </p>
+        <p>
+          Families are being separated. Community members are afraid to go to work, to school,
+          and to move freely through their own neighborhoods.
+          <strong>When one community is treated as disposable, it puts us all at risk.</strong>
+        </p>
+        <p>
+          When people come together across race, background, and struggle,
+          we become a problem that cannot be ignored.
+        </p>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <span class="section-label">Lo que hemos documentado · What we documented</span>
+        <div class="stat-block">
+          <div class="stat">
+            <div class="stat-number">1,400+</div>
+            <div class="stat-label">People detained at Nassau County jail in just five months in 2025</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">Verified ICE sightings documented in Hempstead alone by community trackers</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">3,000</div>
+            <div class="stat-label">People Nassau County was on track to detain in a single year</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">~0</div>
+            <div class="stat-label">Official, localized ICE arrest data made available to the public</div>
+          </div>
+        </div>
+        <p style="font-size: 13px; margin-top: 16px; font-style: italic; color: rgba(250,246,245,0.38);">
+          Community-tracked data, cross-referenced with ICE detention records.
+          A significant portion of detainees had no prior criminal record.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DEMANDS -->
+  <section class="demands-section">
+    <div class="demands-inner reveal">
+      <span class="section-label">Nuestras demandas · Our demands</span>
+      <h2>Put<br>Humanity<br>First.</h2>
+
+      <div class="demands-list">
+
+        <div class="demand">
+          <span class="demand-num">01</span>
+          <h3>Put Humanity First.</h3>
+          <p>Stop mass deportations, detention, and forced disappearances. The dignity of every person — regardless of where they were born or how they arrived — is non-negotiable.</p>
+        </div>
+
+        <div class="demand">
+          <span class="demand-num">02</span>
+          <h3>Our Dignity Is Not Negotiable.</h3>
+          <p>Protect the dignity of workers, unions, and immigrants. We are the backbone of society. Our contributions, our lives, and our presence are not up for debate.</p>
+        </div>
+
+        <div class="demand">
+          <span class="demand-num">03</span>
+          <h3>No Child Detention. Ever.</h3>
+          <p>There is no humane way to detain a child. Period. Not one that feels better. Not one with better conditions. None.</p>
+        </div>
+
+        <div class="demand">
+          <span class="demand-num">04</span>
+          <h3>Not One Detention Center.</h3>
+          <p>Not in our Village. Not on Long Island. We oppose the expansion of the carceral infrastructure that makes mass detention possible.</p>
+        </div>
+
+        <div class="demand">
+          <span class="demand-num">05</span>
+          <h3>ICE Out of Long Island.</h3>
+          <p>End all collaboration with ICE: here in Hempstead, across Nassau County, and throughout Long Island. No cooperation. No cover. No complicity.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCUMENTED HARM -->
+  <section class="harm-section">
+    <div class="harm-inner">
+      <span class="section-label">Lo que hemos visto · Documented examples of harm</span>
+      <h2>What Is Happening in Hempstead.</h2>
+      <p class="harm-intro">
+        Cases below have been corroborated by our trusted local ICE Watch committee,
+        cross-referenced through impacted family outreach and ICE detention status updates.
+        Public testimony, images, and video available upon request.
+      </p>
+
+      <div class="harm-list">
+
+        <div class="harm-item reveal">
+          <h3>Illegal Abductions &amp; Racial Profiling</h3>
+          <p>Legally-documented residents and neighbors with no criminal records have been detained and deported. ICE has staked out bus stops and terminals to racially profile and detain people of Hispanic appearance.</p>
+        </div>
+
+        <div class="harm-item reveal">
+          <h3>Fabricated Warrants</h3>
+          <p>Documentation of warrants being fabricated after abductions to justify illegal detentions. Video footage available of cases where ICE detained people regardless of status and readily available documentation.</p>
+        </div>
+
+        <div class="harm-item reveal">
+          <h3>Village &amp; Police Cooperation</h3>
+          <p>Documented use of the local police armory for temporary detentions. Documented police collaboration with ICE. Unnecessary traffic tickets issued to legal observers monitoring ICE activity.</p>
+        </div>
+
+        <div class="harm-item reveal">
+          <h3>Targeting Community Spaces</h3>
+          <p>ICE crackdowns at the Home Depot parking lot — a center for the day labor community. Arrests at Latino-owned delis, grocers, restaurants, and businesses. Documented arrests as early as 6:30am on Christmas Eve morning.</p>
+        </div>
+
+        <div class="harm-item reveal">
+          <h3>Violence at Point of Arrest</h3>
+          <p>A 32-year-old Honduran resident's head was smashed into a brick wall upon arrest at a grocery store frequented by the Latino community. (January 5, Newsday)</p>
+        </div>
+
+        <div class="harm-item reveal">
+          <h3>Detentions Regardless of Status</h3>
+          <p>Known cases of people with SIJS (Special Immigrant Juvenile Status) detained at the armory. Numerous documented cases of ICE arriving in unmarked vehicles and detaining people simply walking down the street.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR GOAL -->
+  <section class="goal-section">
+    <div class="goal-inner reveal">
+      <span class="section-label">Nuestra visión · Our goal</span>
+      <h2>Our Collective Power.</h2>
+      <p class="goal-quote">
+        "Our collective power shapes the just and equitable world we deserve.
+        Not someday — but now."
+      </p>
+      <div class="goal-divider"></div>
+      <p class="goal-body">
+        We are sending a message: The Village of Hempstead and Long Island residents broadly
+        will not stand for the forced disappearance, detention, or deportation of our families,
+        friends, colleagues, and neighbors. We will not stand for the elimination of our community.
+        We will not tolerate fear in our streets, or accept silence in the face of harm.
+      </p>
+      <p class="goal-body">
+        In Hempstead, community means all of us — from Indigenous, Black, and Latino peoples
+        to immigrants and working class, to every neighbor and ally around and in between.
+        <strong>Hempstead is home. Hempstead is all of us.</strong>
+        We are the pulse — the heart — of Long Island.
+      </p>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners-section">
+    <div class="partners-inner">
+      <span class="section-label">Nuestros socios · March partners</span>
+      <h2>This Mobilization Was Made Stronger By Our Partners.</h2>
+      <p class="partners-intro">
+        More than 25 organizations stood with the Heart of Long Island on May 1, 2025.
+        We thank each of them for standing with our community.
+        Their ongoing work builds the world we march toward.
+      </p>
+
+      <div class="partners-grid">
+
+        <a href="https://www.facebook.com/WorkplaceProject/" target="_blank" rel="noopener" class="partner-card has-logo" title="Workplace Project / Centro de Derechos Laborales">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/62afbc2f.jpg" alt="Workplace Project / Centro de Derechos Laborales" onerror="this.style.display='none'">
+          <span class="partner-name">Workplace Project / Centro de Derechos Laborales</span>
+        </a>
+
+        <a href="https://ndlon.org/" target="_blank" rel="noopener" class="partner-card has-logo" title="National Day Laborer Organizing Network (NDLON)">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/f78ebf7d.jpg" alt="NDLON — National Day Laborer Organizing Network" onerror="this.style.display='none'">
+          <span class="partner-name">National Day Laborer Organizing Network (NDLON)</span>
+        </a>
+
+        <a href="https://www.carecenny.org/" target="_blank" rel="noopener" class="partner-card has-logo" title="Central American Refugee Center (CARECEN-NY)">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/0f8494d9.jpg" alt="Central American Refugee Center (CARECEN-NY)" onerror="this.style.display='none'">
+          <span class="partner-name">Central American Refugee Center (CARECEN-NY)</span>
+        </a>
+
+        <a href="https://www.nysna.org/" target="_blank" rel="noopener" class="partner-card" title="New York State Nurses Association (NYSNA)">
+          <span class="partner-name">New York State Nurses Association (NYSNA)</span>
+        </a>
+
+        <a href="https://lipc.org/" target="_blank" rel="noopener" class="partner-card has-logo" title="Long Island Progressive Coalition (LIPC)">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/8377d700.jpg" alt="Long Island Progressive Coalition (LIPC)" onerror="this.style.display='none'">
+          <span class="partner-name">Long Island Progressive Coalition (LIPC)</span>
+        </a>
+
+        <a href="https://longislanddsa.solidarity.tech/" target="_blank" rel="noopener" class="partner-card has-logo" title="Long Island Democratic Socialists of America">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/5f223934.jpg" alt="Long Island DSA" onerror="this.style.display='none'">
+          <span class="partner-name">Long Island Democratic Socialists of America</span>
+        </a>
+
+        <a href="https://www.nyclu.org/about/regional-offices/nassau-county" target="_blank" rel="noopener" class="partner-card has-logo" title="NYCLU Nassau County">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/4a69214c.jpg" alt="NYCLU Nassau County" onerror="this.style.display='none'">
+          <span class="partner-name">NYCLU Nassau County</span>
+        </a>
+
+        <a href="https://linktr.ee/asivamosny" target="_blank" rel="noopener" class="partner-card has-logo" title="Así Vamos NY">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/9a1a88c9.jpg" alt="Así Vamos NY" onerror="this.style.display='none'">
+          <span class="partner-name">Así Vamos NY</span>
+        </a>
+
+        <a href="https://www.nyic.org/" target="_blank" rel="noopener" class="partner-card has-logo" title="New York Immigration Coalition">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/73345522.jpg" alt="New York Immigration Coalition" onerror="this.style.display='none'">
+          <span class="partner-name">New York Immigration Coalition</span>
+        </a>
+
+        <a href="https://longislandjwj.org/" target="_blank" rel="noopener" class="partner-card" title="Long Island Jobs with Justice">
+          <span class="partner-name">Long Island Jobs with Justice</span>
+        </a>
+
+        <a href="https://www.instagram.com/workingpeoplesliberationcorps" target="_blank" rel="noopener" class="partner-card" title="Working People's Liberation Corps">
+          <span class="partner-name">Working People's Liberation Corps</span>
+        </a>
+
+        <a href="https://pslweb.org/" target="_blank" rel="noopener" class="partner-card has-logo" title="Party for Socialism and Liberation (PSL)">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/6d85b623.png" alt="Party for Socialism and Liberation (PSL)" onerror="this.style.display='none'">
+          <span class="partner-name">Party for Socialism and Liberation (PSL)</span>
+        </a>
+
+        <a href="https://www.instagram.com/pali.coalition/" target="_blank" rel="noopener" class="partner-card" title="PALI Coalition">
+          <span class="partner-name">PALI Coalition</span>
+        </a>
+
+        <a href="https://www.nycommunities.org/" target="_blank" rel="noopener" class="partner-card has-logo" title="New York Communities for Change (NYCC)">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/fb551200.png" alt="New York Communities for Change (NYCC)" onerror="this.style.display='none'">
+          <span class="partner-name">New York Communities for Change (NYCC)</span>
+        </a>
+
+        <a href="https://local338.org/" target="_blank" rel="noopener" class="partner-card has-logo" title="Local 338 RWDSU/UFCW">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/2eb0bcf2.jpg" alt="Local 338 RWDSU/UFCW" onerror="this.style.display='none'">
+          <span class="partner-name">Local 338 RWDSU/UFCW</span>
+        </a>
+
+        <a href="https://www.lwv.org/" target="_blank" rel="noopener" class="partner-card has-logo" title="League of Women Voters">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/7e11eeec.jpg" alt="League of Women Voters" onerror="this.style.display='none'">
+          <span class="partner-name">League of Women Voters</span>
+        </a>
+
+        <a href="https://www.immigrantarc.org/" target="_blank" rel="noopener" class="partner-card has-logo" title="Immigrant ARC">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/76c0a85f.jpg" alt="Immigrant ARC" onerror="this.style.display='none'">
+          <span class="partner-name">Immigrant ARC</span>
+        </a>
+
+        <a href="https://liija.org/" target="_blank" rel="noopener" class="partner-card" title="Long Island Immigrant Justice Alliance (LIIJA)">
+          <span class="partner-name">Long Island Immigrant Justice Alliance (LIIJA)</span>
+        </a>
+
+        <a href="https://www.ufcw1500.org/" target="_blank" rel="noopener" class="partner-card" title="UFCW Local 1500">
+          <span class="partner-name">United Food &amp; Commercial Workers Local 1500</span>
+        </a>
+
+        <a href="https://www.1199seiu.org/nycli" target="_blank" rel="noopener" class="partner-card has-logo" title="1199 SEIU United Healthcare Workers East">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/df52bf03.jpg" alt="1199 SEIU United Healthcare Workers East" onerror="this.style.display='none'">
+          <span class="partner-name">1199 SEIU United Healthcare Workers East</span>
+        </a>
+
+        <a href="https://www.facebook.com/SouthShoreWomensAlliance" target="_blank" rel="noopener" class="partner-card has-logo" title="South Shore Women's Alliance">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/80a4766c.jpg" alt="South Shore Women's Alliance" onerror="this.style.display='none'">
+          <span class="partner-name">South Shore Women's Alliance</span>
+        </a>
+
+        <a href="https://www.seiu32bj.org/" target="_blank" rel="noopener" class="partner-card has-logo" title="32BJ SEIU">
+          <img src="https://fromtheheartofli.carrd.co/assets/images/gallery01/dd4bc313.jpg" alt="32BJ SEIU" onerror="this.style.display='none'">
+          <span class="partner-name">32BJ SEIU</span>
+        </a>
+
+        <a href="https://www.instagram.com/singingresistance" target="_blank" rel="noopener" class="partner-card" title="Singing Resistance">
+          <span class="partner-name">Singing Resistance</span>
+        </a>
+
+      </div>
+
+      <p style="font-size: 13px; color: rgba(250,246,245,0.35); font-style: italic; margin-top: 8px;">
+        We thank each of our partners for standing with the Heart of Long Island.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ICE CASCADE -->
+  <section class="cascade-section">
+    <span class="section-label" style="display:block; margin-bottom: 48px;">La demanda que no cambia · The demand that does not change</span>
+    <p class="cascade-line">ICE Out of Hempstead.</p>
+    <div class="cascade-divider"></div>
+    <p class="cascade-line">ICE Out of Long Island.</p>
+    <div class="cascade-divider"></div>
+    <p class="cascade-line">ICE Out of Everywhere.</p>
+  </section>
+
+  <!-- CONTACT / CTA -->
+  <section class="cta-section">
+    <div class="cta-inner">
+
+      <div class="reveal">
+        <h2>Stay Connected.<br>Sigue Conectado/a.</h2>
+        <p>
+          This march was a moment. The movement is ongoing. Follow us for updates,
+          actions, and community news from the Heart of Long Island.
+        </p>
+        <a href="palette-a-forest-gold.html" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+          Back to home / Volver al inicio
+        </a>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <div class="social-links">
+          <a href="https://www.instagram.com/fromtheheartoflongisland/" target="_blank" rel="noopener" class="social-link">
+            <span class="social-link-icon">📷</span>
+            <div>
+              <span class="social-link-text">Instagram</span>
+              <span class="social-link-sub">@fromtheheartoflongisland</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>From the Heart of Long Island</h3>
+        <div class="footer-bilingual">
+          <p class="footer-en">Sending our deepest gratitude from the heart of Long Island.</p>
+          <p class="footer-es">Enviando nuestra más profunda gratitud desde el corazón de Long Island.</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 From the Heart of Long Island · fromtheheartoflongisland.org</p>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.10 });
+    reveals.forEach(el => observer.observe(el));
+
+    const dismissBtn = document.getElementById('dismissBar');
+    const distressBar = document.getElementById('distressBar');
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', () => { distressBar.style.display = 'none'; });
+    }
+  </script>
+
+</body>
+</html>
