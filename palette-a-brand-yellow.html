@@ -718,11 +718,11 @@
     }
 
     .cascade-line:nth-child(2) { font-size: clamp(32px, 5vw, 56px); }
-    .cascade-line:nth-child(3) { font-size: clamp(44px, 7vw, 80px); }
-    .cascade-line:nth-child(4) { font-size: clamp(60px, 9.5vw, 112px); }
+    .cascade-line:nth-child(4) { font-size: clamp(44px, 7vw, 80px); }
+    .cascade-line:nth-child(6) { font-size: clamp(60px, 9.5vw, 112px); }
 
     .cascade-line:hover { color: var(--cream); }
-    .cascade-line:nth-child(4):hover { color: var(--gold); }
+    .cascade-line:nth-child(6):hover { color: var(--gold); }
 
     .cascade-divider {
       width: 1px;
@@ -782,22 +782,23 @@
     /* ── FOOTER BILINGUAL ────────────────────── */
     .footer-bilingual {
       display: flex;
-      gap: 40px;
+      justify-content: space-between;
       align-items: baseline;
+      margin-top: 16px;
+      gap: 40px;
     }
 
     .footer-en {
       font-size: 14px;
       line-height: 1.5;
       color: rgba(242,235,217,0.65);
-      flex: 1;
+      text-align: left;
     }
 
     .footer-es {
       font-size: 14px;
       line-height: 1.5;
       color: rgba(242,235,217,0.40);
-      flex: 1;
       text-align: right;
       font-style: italic;
     }
@@ -828,11 +829,12 @@
     }
 
     .footer-top {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 48px;
-      align-items: start;
+      display: block;
       margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      text-align: center;
     }
 
     .footer-brand h3 {
@@ -1035,17 +1037,14 @@
     </div>
     <div class="who-text">
       <p>
-        From the Heart of Long Island is a community space rooted in Hempstead,
-        built on mutual aid, sustained organizing, and the belief that collective
-        care is how neighborhoods thrive.
+        From the Heart of Long Island is a community space rooted in Hempstead.
+        <em>[PLACEHOLDER TEXT]</em>
       </p>
       <p>
         This is a space for connection — to resources, relationships, and work
-        that outlasts any single campaign. When we hold each other up through
-        whatever comes, we <em>[PLACEHOLDER TEXT]</em>...
+        that outlasts any single campaign… <em>[PLACEHOLDER TEXT]</em>...
       </p>
       <p>
-        Our collective power shapes the just and equitable world we deserve.
         <strong>Hempstead is all of us. Hempstead is home.</strong>
       </p>
     </div>
@@ -1062,8 +1061,7 @@
         <span class="pillar-spanish">Ayuda Mutua</span>
         <p>
           Connecting Hempstead families with food, legal resources, emergency
-          support, and know-your-rights education. Neighbors helping neighbors —
-          not waiting for systems that have failed us.
+          support, and know-your-rights education. Neighbors helping neighbors.
         </p>
         <a href="#" class="pillar-link">
           Learn more
@@ -1077,9 +1075,7 @@
         <h3>ICE Out of Long Island</h3>
         <span class="pillar-spanish">Fuera el ICE de Long Island</span>
         <p>
-          We organize, protest, and demand accountability. ICE enforcement
-          terrorizes our community. We document it, fight it, and stand with
-          every family that's been targeted.
+          We organize, protest, and demand accountability… <em>[PLACEHOLDER TEXT]</em>
         </p>
         <a href="#" class="pillar-link">
           Learn more
@@ -1094,8 +1090,7 @@
         <span class="pillar-spanish">Organización Sostenida</span>
         <p>
           This march is not the end — it's a continuation. We will keep
-          building, organizing, and showing up for one another. Real change
-          takes time, and we're here for all of it.
+          building, organizing, and showing up for one another.
         </p>
         <a href="#" class="pillar-link">
           Learn more
@@ -1120,11 +1115,10 @@
           <h3>Necesito Ayuda</h3>
           <span class="action-card-spanish">I Need Help</span>
           <p>
-            Facing an immigration situation, looking for resources,
-            or need to know your rights? We're here. No questions asked.
+            ¿Estás en una situación migratoria, buscas recursos, o necesitas conocer tus derechos? Aquí estamos. Sin preguntas.
           </p>
           <div class="action-card-arrow">
-            Get support
+            Obtén apoyo
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </div>
         </a>
@@ -1174,15 +1168,13 @@
   <!-- COMMUNITY VOICE -->
   <section class="voice">
     <div class="voice-inner reveal">
-      <span class="section-label">La comunidad habla</span>
-      <p class="voice-aside">"We are basking in the afterglow of joyful resistance."</p>
       <p class="voice-quote">
         "We are part of a long history of people-powered victories — proof
         of what happens when people put humanity first and refuse to be divided,
         even in the face of grave and rampant injustice."
       </p>
       <div class="voice-divider"></div>
-      <p class="voice-attribution">— From the Heart of Long Island, May 1, 2025</p>
+      <p class="voice-attribution">— From the Heart of Long Island, May 1, 2026</p>
     </div>
   </section>
 
@@ -1198,7 +1190,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 From the Heart of Long Island · fromtheheartoflongisland.org</p>
+      <p>© 2026 From the Heart of Long Island · fromtheheartoflongisland.org</p>
     </div>
   </footer>
 
